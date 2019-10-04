@@ -1,7 +1,16 @@
 {
     "name": "ksv2005/mind-games",
-    "require": {},
     "bin": [
       "bin/brain-games"
-    ]
+    ],
+    "type": "library",
+    "authors": [
+      {
+        "name": "Sergey Kochegarov",
+        "email": "ksv2005@mail.ru"
+      }
+    ],
+    "description": "mind-games php-package",
+    "license": "MIT",
+    "minimum-stability": "dev"
 }
