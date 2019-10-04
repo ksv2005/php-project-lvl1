@@ -1,0 +1,2 @@
+language: php
+before_script: make lint
