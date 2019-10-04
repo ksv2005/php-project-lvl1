@@ -12,5 +12,11 @@
     ],
     "description": "mind-games php-package",
     "license": "MIT",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": {
+        "wp-cli/php-cli-tools": "dev-master"
+    },
+    "autoload": {
+        "files": ["src/cli.php"]
+    }
 }
