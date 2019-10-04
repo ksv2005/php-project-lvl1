@@ -1,2 +1,9 @@
 language: php
-before_script: make lint
+php:
+  - '7.2'
+
+install:
+  - composer self-update
+  - make install
+
+script: make lint
