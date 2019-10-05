@@ -1,7 +1,8 @@
 {
     "name": "ksv2005/mind-games",
     "bin": [
-      "bin/brain-games"
+      "bin/brain-games",
+      "bin/brain-even"
     ],
     "type": "library",
     "authors": [
