@@ -5,7 +5,6 @@ namespace BrainGames\Even;
 use function cli\line;
 use function cli\prompt;
 
-
 define('COUNT_GAMES', 3);
 
 function run()
