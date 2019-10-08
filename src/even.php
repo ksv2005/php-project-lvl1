@@ -38,7 +38,10 @@ function game($name)
         line('Correct!');
         return true;
     } else {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $true_answer);
+        line(
+            "'%s' is wrong answer ;(. Correct answer was '%s'.",
+            $answer, $true_answer
+        );
         line("Let's try again, %s!", $name);
         return false;
     }
