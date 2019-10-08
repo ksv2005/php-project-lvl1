@@ -40,7 +40,8 @@ function game($name)
     } else {
         line(
             "'%s' is wrong answer ;(. Correct answer was '%s'.",
-            $answer, $true_answer
+            $answer,
+            $true_answer
         );
         line("Let's try again, %s!", $name);
         return false;
