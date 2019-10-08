@@ -13,7 +13,7 @@
     ],
     "description": "mind-games php-package",
     "license": "MIT",
-    "require": {
+    "require-dev": {
         "wp-cli/php-cli-tools": "dev-master",
         "squizlabs/php_codesniffer": "^3.0@dev"
     },
