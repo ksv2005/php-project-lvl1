@@ -20,7 +20,9 @@
     "autoload": {
         "files": [
           "src/cli.php",
-          "src/even.php"
+          "src/games/even.php",
+          "src/games/calc.php",
+          "src/games/common.php"
         ]
     },
     "scripts": {
