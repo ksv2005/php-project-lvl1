@@ -5,5 +5,9 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fed0e6a2a8b8cc98805e/test_coverage)](https://codeclimate.com/github/ksv2005/php-project-lvl1/test_coverage)
 
 ##
-brain-even
+
+##### brain-even
 [![asciicast](https://asciinema.org/a/ZaD2lwenV1oewXpAfNPojMmMB.svg)](https://asciinema.org/a/ZaD2lwenV1oewXpAfNPojMmMB)
+
+##### brain-calc
+[![asciicast](https://asciinema.org/a/WDpopp6cqevWrRJTxv5eKuKuX.svg)](https://asciinema.org/a/WDpopp6cqevWrRJTxv5eKuKuX)
