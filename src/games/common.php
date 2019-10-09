@@ -75,14 +75,21 @@ function game($type, $condition_message)
 
 function process($name, $type)
 {
-    if ($type == 'even') {
-        [$question, $answer] = \BrainGames\Even\solution();
-    } elseif ($type == 'calc') {
-        [$question, $answer] = \BrainGames\Calc\solution();
-    }
-
+    [$question, $answer] = choose_solution($type);
     question_message($question);
     $user_message = user_message();
     return ($user_message == $answer) ?
         correct_message() : error($name, $answer, $user_message);
+}
+
+function choose_solution($type)
+{
+    switch ($type) {
+        case 'even':
+            return \BrainGames\Even\solution();
+        case 'calc':
+            return \BrainGames\Calc\solution();
+        case 'gcd':
+            return \BrainGames\Gcd\solution();
+    }
 }
