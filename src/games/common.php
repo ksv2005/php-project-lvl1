@@ -91,5 +91,7 @@ function choose_solution($type)
             return \BrainGames\Calc\solution();
         case 'gcd':
             return \BrainGames\Gcd\solution();
+        case 'progression':
+            return \BrainGames\Progression\solution();
     }
 }
