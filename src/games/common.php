@@ -93,5 +93,7 @@ function choose_solution($type)
             return \BrainGames\Gcd\solution();
         case 'progression':
             return \BrainGames\Progression\solution();
+        case 'prime':
+            return \BrainGames\Prime\solution();
     }
 }
