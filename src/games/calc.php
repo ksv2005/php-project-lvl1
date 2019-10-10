@@ -1,20 +1,20 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\Games\Calc;
 
-use function BrainGames\Common\game;
+use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('calc', condition_message());
+    game('calc', conditionMessage());
 }
 
 function solution()
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);
-    $expression_array = ['+', '-', '*'];
-    $expression = $expression_array[array_rand($expression_array)];
+    $expressionArray = ['+', '-', '*'];
+    $expression = $expressionArray[array_rand($expressionArray)];
     $question = "{$number1} {$expression} $number2";
     $answer = decision($expression, $number1, $number2);
 
@@ -33,7 +33,7 @@ function decision($expression, $number1, $number2)
     }
 }
 
-function condition_message()
+function conditionMessage()
 {
     return 'What is the result of the expression?';
 }

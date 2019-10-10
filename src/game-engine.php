@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Common;
+namespace BrainGames\GameEngine;
 
 use function cli\line;
 use function cli\prompt;
@@ -20,9 +20,9 @@ function welcome()
     line('Welcome to Brain Games!');
 }
 
-function condition($condition_message)
+function condition($conditionMessage)
 {
-    line($condition_message);
+    line($conditionMessage);
     line('');
 }
 
@@ -31,37 +31,37 @@ function congratulation($name)
     line("Congratulations, %s!", $name);
 }
 
-function correct_message()
+function correctMessage()
 {
     line('Correct!');
     return true;
 }
 
-function error($name, $correct, $user_message)
+function error($name, $correct, $userMessage)
 {
     line(
         "'%s' is wrong answer ;(. Correct answer was '%s'.",
-        $user_message,
+        $userMessage,
         $correct
     );
     line("Let's try again, %s!", $name);
     return false;
 }
 
-function user_message()
+function userMessage()
 {
     return prompt('Your answer');
 }
 
-function question_message($text)
+function questionMessage($text)
 {
     line("Question: %s", $text);
 }
 
-function game($type, $condition_message)
+function game($type, $conditionMessage)
 {
     welcome();
-    condition($condition_message);
+    condition($conditionMessage);
     $name = greetings();
     $count = 0;
     while ($count < COUNT_GAMES) {
@@ -75,25 +75,25 @@ function game($type, $condition_message)
 
 function process($name, $type)
 {
-    [$question, $answer] = choose_solution($type);
-    question_message($question);
-    $user_message = user_message();
-    return ($user_message == $answer) ?
-        correct_message() : error($name, $answer, $user_message);
+    [$question, $answer] = chooseSolution($type);
+    questionMessage($question);
+    $userMessage = userMessage();
+    return ($userMessage == $answer) ?
+        correctMessage() : error($name, $answer, $userMessage);
 }
 
-function choose_solution($type)
+function chooseSolution($type)
 {
     switch ($type) {
         case 'even':
-            return \BrainGames\Even\solution();
+            return \BrainGames\Games\Even\solution();
         case 'calc':
-            return \BrainGames\Calc\solution();
+            return \BrainGames\Games\Calc\solution();
         case 'gcd':
-            return \BrainGames\Gcd\solution();
+            return \BrainGames\Games\Gcd\solution();
         case 'progression':
-            return \BrainGames\Progression\solution();
+            return \BrainGames\Games\Progression\solution();
         case 'prime':
-            return \BrainGames\Prime\solution();
+            return \BrainGames\Games\Prime\solution();
     }
 }

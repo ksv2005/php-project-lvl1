@@ -1,12 +1,12 @@
 <?php
 
-namespace BrainGames\Even;
+namespace BrainGames\Games\Even;
 
-use function BrainGames\Common\game;
+use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('even', condition_message());
+    game('even', conditionMessage());
 }
 
 function solution()
@@ -16,7 +16,7 @@ function solution()
     return [$question, $answer];
 }
 
-function condition_message()
+function conditionMessage()
 {
     return 'Answer "yes" if the number is even, otherwise answer "no".';
 }

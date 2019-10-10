@@ -1,15 +1,15 @@
 <?php
 
-namespace BrainGames\Prime;
+namespace BrainGames\Games\Prime;
 
-use function BrainGames\Common\game;
+use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('prime', condition_message());
+    game('prime', conditionMessage());
 }
 
-function condition_message()
+function conditionMessage()
 {
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
@@ -31,8 +31,7 @@ function isPrime($number)
         return false;
     }
     $i = 3;
-    $max_factor = (int) sqrt($number);
-    while ($i <= $max_factor) {
+    while ($i <= (int) sqrt($number)) {
         if ($number % $i == 0) {
             return false;
         }

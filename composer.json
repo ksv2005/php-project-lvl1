@@ -16,6 +16,9 @@
       }
     ],
     "description": "mind-games php-package",
+    "keywords": [
+      "brain", "games"
+    ],
     "license": "MIT",
     "require-dev": {
         "wp-cli/php-cli-tools": "dev-master",

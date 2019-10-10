@@ -1,12 +1,12 @@
 <?php
 
-namespace BrainGames\Gcd;
+namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Common\game;
+use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('gcd', condition_message());
+    game('gcd', conditionMessage());
 }
 
 function solution()
@@ -23,7 +23,7 @@ function gcd($a, $b)
     return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
 
-function condition_message()
+function conditionMessage()
 {
     return 'Find the greatest common divisor of given numbers.';
 }

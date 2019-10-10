@@ -1,12 +1,12 @@
 <?php
 
-namespace BrainGames\Progression;
+namespace BrainGames\Games\Progression;
 
-use function BrainGames\Common\game;
+use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('progression', condition_message());
+    game('progression', conditionMessage());
 }
 
 function solution()
@@ -26,7 +26,7 @@ function solution()
     return [$question, $answer];
 }
 
-function condition_message()
+function conditionMessage()
 {
     return 'What number is missing in the progression?';
 }
