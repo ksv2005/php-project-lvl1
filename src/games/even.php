@@ -9,11 +9,16 @@ function run()
     game('even', conditionMessage());
 }
 
-function solution()
+function getResult()
 {
     $question = rand(1, 99);
-    $answer = ($question % 2 == 0) ? 'yes' : 'no';
+    $answer = even($question);
     return [$question, $answer];
+}
+
+function even($number)
+{
+    return ($number % 2 == 0) ? 'yes' : 'no';
 }
 
 function conditionMessage()

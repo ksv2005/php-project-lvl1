@@ -9,7 +9,7 @@ function run()
     game('gcd', conditionMessage());
 }
 
-function solution()
+function getResult()
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);

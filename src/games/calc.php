@@ -9,12 +9,12 @@ function run()
     game('calc', conditionMessage());
 }
 
-function solution()
+function getResult()
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);
-    $expressionArray = ['+', '-', '*'];
-    $expression = $expressionArray[array_rand($expressionArray)];
+    $expressions = ['+', '-', '*'];
+    $expression = $expressions[array_rand($expressions)];
     $question = "{$number1} {$expression} $number2";
     $answer = decision($expression, $number1, $number2);
 

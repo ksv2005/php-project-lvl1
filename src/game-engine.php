@@ -7,62 +7,14 @@ use function cli\prompt;
 
 define('COUNT_GAMES', 3);
 
-function greetings()
+function game($type, $conditionMessage)
 {
+    line('Welcome to Brain Games!');
+    line($conditionMessage);
+    line('');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('');
-    return $name;
-}
-
-function welcome()
-{
-    line('Welcome to Brain Games!');
-}
-
-function condition($conditionMessage)
-{
-    line($conditionMessage);
-    line('');
-}
-
-function congratulation($name)
-{
-    line("Congratulations, %s!", $name);
-}
-
-function correctMessage()
-{
-    line('Correct!');
-    return true;
-}
-
-function error($name, $correct, $userMessage)
-{
-    line(
-        "'%s' is wrong answer ;(. Correct answer was '%s'.",
-        $userMessage,
-        $correct
-    );
-    line("Let's try again, %s!", $name);
-    return false;
-}
-
-function userMessage()
-{
-    return prompt('Your answer');
-}
-
-function questionMessage($text)
-{
-    line("Question: %s", $text);
-}
-
-function game($type, $conditionMessage)
-{
-    welcome();
-    condition($conditionMessage);
-    $name = greetings();
     $count = 0;
     while ($count < COUNT_GAMES) {
         if (!process($name, $type)) {
@@ -70,30 +22,40 @@ function game($type, $conditionMessage)
         }
         $count++;
     }
-    congratulation($name);
+    line("Congratulations, %s!", $name);
 }
 
 function process($name, $type)
 {
     [$question, $answer] = chooseSolution($type);
-    questionMessage($question);
-    $userMessage = userMessage();
-    return ($userMessage == $answer) ?
-        correctMessage() : error($name, $answer, $userMessage);
+    line("Question: %s", $question);
+    $userMessage = prompt('Your answer');
+    if ($userMessage == $answer) {
+        line('Correct!');
+        return true;
+    } else {
+        line(
+            "'%s' is wrong answer ;(. Correct answer was '%s'.",
+            $userMessage,
+            $answer
+        );
+        line("Let's try again, %s!", $name);
+        return false;
+    }
 }
 
 function chooseSolution($type)
 {
     switch ($type) {
         case 'even':
-            return \BrainGames\Games\Even\solution();
+            return \BrainGames\Games\Even\getResult();
         case 'calc':
-            return \BrainGames\Games\Calc\solution();
+            return \BrainGames\Games\Calc\getResult();
         case 'gcd':
-            return \BrainGames\Games\Gcd\solution();
+            return \BrainGames\Games\Gcd\getResult();
         case 'progression':
-            return \BrainGames\Games\Progression\solution();
+            return \BrainGames\Games\Progression\getResult();
         case 'prime':
-            return \BrainGames\Games\Prime\solution();
+            return \BrainGames\Games\Prime\getResult();
     }
 }

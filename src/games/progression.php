@@ -4,18 +4,20 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\GameEngine\game;
 
+define('PROGRESSION_LENGTH', 10);
+
 function run()
 {
     game('progression', conditionMessage());
 }
 
-function solution()
+function getResult()
 {
     $number = rand(1, 5);
     $step = rand(1, 10);
     $select = rand(0, 9);
     $arr = [];
-    while (count($arr) < 10) {
+    while (count($arr) < PROGRESSION_LENGTH) {
         $arr[] = $number;
         $number += $step;
     }
