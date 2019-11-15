@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\GameEngine\game;
+use function BrainGames\Engine\game;
 
 function run()
 {

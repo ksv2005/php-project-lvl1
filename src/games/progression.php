@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\GameEngine\game;
+use function BrainGames\Engine\game;
 
 define('PROGRESSION_LENGTH', 10);
 
