@@ -6,7 +6,7 @@ use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('prime', conditionMessage());
+    game('BrainGames\Games\Prime\getSolution', conditionMessage());
 }
 
 function conditionMessage()
@@ -14,7 +14,7 @@ function conditionMessage()
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
-function solution()
+function getSolution()
 {
     $number = rand(1, 100);
     $answer = isPrime($number) ? 'yes' : 'no';

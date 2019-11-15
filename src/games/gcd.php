@@ -6,21 +6,21 @@ use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('gcd', conditionMessage());
+    game('BrainGames\Games\Gcd\getSolution', conditionMessage());
 }
 
-function solution()
+function getSolution()
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);
     $question = "{$number1} $number2";
-    $answer = gcd($number1, $number2);
+    $answer = getResult($number1, $number2);
     return [$question, $answer];
 }
 
-function gcd($a, $b)
+function getResult($a, $b)
 {
-    return ($a % $b) ? gcd($b, $a % $b) : $b;
+    return ($a % $b) ? getResult($b, $a % $b) : $b;
 }
 
 function conditionMessage()

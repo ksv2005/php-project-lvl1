@@ -6,24 +6,24 @@ use function BrainGames\GameEngine\game;
 
 function run()
 {
-    game('calc', conditionMessage());
+    game('BrainGames\Games\Calc\getSolution', conditionMessage());
 }
 
-function solution()
+function getSolution()
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);
-    $expressionArray = ['+', '-', '*'];
-    $expression = $expressionArray[array_rand($expressionArray)];
-    $question = "{$number1} {$expression} $number2";
-    $answer = decision($expression, $number1, $number2);
+    $operatonType = ['+', '-', '*'];
+    $operation = $operatonType[array_rand($operatonType)];
+    $question = "{$number1} {$operation} $number2";
+    $answer = getResult($operation, $number1, $number2);
 
     return [$question, $answer];
 }
 
-function decision($expression, $number1, $number2)
+function getResult($operation, $number1, $number2)
 {
-    switch ($expression) {
+    switch ($operation) {
         case '+':
             return $number1 + $number2;
         case '-':
