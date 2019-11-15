@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\GameEngine\game;
 
-define('PROGRESSION_LENGTH', 20);
+define('PROGRESSION_LENGTH', 10);
 
 function run()
 {
