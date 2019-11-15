@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "f797a35dafabd9dddab3029e47f550ba7c615280"
+                "reference": "a24f6d455a879922307717e3994d17f88f26c0ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f797a35dafabd9dddab3029e47f550ba7c615280",
-                "reference": "f797a35dafabd9dddab3029e47f550ba7c615280",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/a24f6d455a879922307717e3994d17f88f26c0ca",
+                "reference": "a24f6d455a879922307717e3994d17f88f26c0ca",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-10-10T01:12:03+00:00"
+            "time": "2019-10-13T21:40:14+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
