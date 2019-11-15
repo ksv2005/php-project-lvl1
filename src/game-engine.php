@@ -7,7 +7,7 @@ use function cli\prompt;
 
 define('COUNT_GAMES', 3);
 
-function correctMessage()
+function success()
 {
     line('Correct!');
     return true;
@@ -30,7 +30,7 @@ function process($name, $solution)
     line("Question: %s", $question);
     $userMessage = prompt('Your answer');
     return ($userMessage == $answer) ?
-        correctMessage() : error($name, $answer, $userMessage);
+        success() : error($name, $answer, $userMessage);
 }
 
 function game($solution, $conditionMessage)
