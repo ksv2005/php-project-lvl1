@@ -6,24 +6,22 @@ use function BrainGames\Engine\game;
 
 function run()
 {
-    game('BrainGames\Games\Gcd\getSolution', conditionMessage());
+    game(
+        'BrainGames\Games\Gcd\getQuestionAndAnswer',
+        'Find the greatest common divisor of given numbers.'
+    );
 }
 
-function getSolution()
+function getQuestionAndAnswer()
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);
     $question = "{$number1} $number2";
-    $answer = getResult($number1, $number2);
+    $answer = gcd($number1, $number2);
     return [$question, $answer];
 }
 
-function getResult($a, $b)
+function gcd($a, $b)
 {
-    return ($a % $b) ? getResult($b, $a % $b) : $b;
-}
-
-function conditionMessage()
-{
-    return 'Find the greatest common divisor of given numbers.';
+    return ($a % $b) ? gcd($b, $a % $b) : $b;
 }

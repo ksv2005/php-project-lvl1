@@ -6,10 +6,13 @@ use function BrainGames\Engine\game;
 
 function run()
 {
-    game('BrainGames\Games\Even\getSolution', conditionMessage());
+    game(
+        'BrainGames\Games\Even\getQuestionAndAnswer',
+        'Answer "yes" if the number is even, otherwise answer "no".'
+    );
 }
 
-function getSolution()
+function getQuestionAndAnswer()
 {
     $question = rand(1, 99);
     $answer = isEven($question) ? 'yes' : 'no';
@@ -19,9 +22,4 @@ function getSolution()
 function isEven($number)
 {
     return ($number % 2 == 0);
-}
-
-function conditionMessage()
-{
-    return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
