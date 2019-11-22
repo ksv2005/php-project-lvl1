@@ -2,36 +2,33 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\game;
+use function BrainGames\Engine\play;
 
-define('OPERATION_TYPE', ['+', '-', '*']);
+define('OPERATIONS', ['+', '-', '*']);
+define('RULE_CALC', 'What is the result of the expression?');
 
 function run()
 {
-    game(
-        'BrainGames\Games\Calc\getQuestionAndAnswer',
-        'What is the result of the expression?'
+    play(
+        function () {
+            $number1 = rand(1, 99);
+            $number2 = rand(1, 99);
+            $operation = OPERATIONS[array_rand(OPERATIONS)];
+            $question = "$number1 $operation $number2";
+            $answer = getResult($operation, $number1, $number2);
+            return [$question, $answer];
+        }, RULE_CALC
     );
-}
-
-function getQuestionAndAnswer()
-{
-    $number1 = rand(1, 99);
-    $number2 = rand(1, 99);
-    $operation = OPERATION_TYPE[array_rand(OPERATION_TYPE)];
-    $question = "{$number1} {$operation} $number2";
-    $answer = getResult($operation, $number1, $number2);
-    return [$question, $answer];
 }
 
 function getResult($operation, $number1, $number2)
 {
     switch ($operation) {
-        case '+':
-            return $number1 + $number2;
-        case '-':
-            return $number1 - $number2;
-        case '*':
-            return $number1 * $number2;
+    case '+':
+        return $number1 + $number2;
+    case '-':
+        return $number1 - $number2;
+    case '*':
+        return $number1 * $number2;
     }
 }

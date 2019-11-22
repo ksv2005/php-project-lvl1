@@ -2,22 +2,22 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\game;
+use function BrainGames\Engine\play;
+
+define(
+    'RULE_PRIME',
+    'Answer "yes" if given number is prime. Otherwise answer "no".'
+);
 
 function run()
 {
-    game(
-        'BrainGames\Games\Prime\getQuestionAndAnswer',
-        'Answer "yes" if given number is prime. Otherwise answer "no".'
+    play(
+        function () {
+            $question = rand(1, 100);
+            $answer = isPrime($question) ? 'yes' : 'no';
+            return [$question, $answer];
+        }, RULE_PRIME
     );
-}
-
-function getQuestionAndAnswer()
-{
-    $number = rand(1, 100);
-    $answer = isPrime($number) ? 'yes' : 'no';
-    $question = $number;
-    return [$question, $answer];
 }
 
 function isPrime($number)
