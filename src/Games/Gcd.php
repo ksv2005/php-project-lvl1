@@ -15,7 +15,8 @@ function run()
             $question = "{$number1} $number2";
             $answer = gcd($number1, $number2);
             return [$question, $answer];
-        }, RULE_GCD
+        },
+        RULE_GCD
     );
 }
 

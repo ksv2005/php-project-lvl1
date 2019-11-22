@@ -17,18 +17,19 @@ function run()
             $question = "$number1 $operation $number2";
             $answer = getResult($operation, $number1, $number2);
             return [$question, $answer];
-        }, RULE_CALC
+        },
+        RULE_CALC
     );
 }
 
 function getResult($operation, $number1, $number2)
 {
     switch ($operation) {
-    case '+':
-        return $number1 + $number2;
-    case '-':
-        return $number1 - $number2;
-    case '*':
-        return $number1 * $number2;
+        case '+':
+            return $number1 + $number2;
+        case '-':
+            return $number1 - $number2;
+        case '*':
+            return $number1 * $number2;
     }
 }

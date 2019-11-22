@@ -13,7 +13,8 @@ function run()
             $question = rand(1, 99);
             $answer = isEven($question) ? 'yes' : 'no';
             return [$question, $answer];
-        }, RULE_EVEN
+        },
+        RULE_EVEN
     );
 }
 

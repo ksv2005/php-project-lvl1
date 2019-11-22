@@ -16,7 +16,8 @@ function run()
             $question = rand(1, 100);
             $answer = isPrime($question) ? 'yes' : 'no';
             return [$question, $answer];
-        }, RULE_PRIME
+        },
+        RULE_PRIME
     );
 }
 

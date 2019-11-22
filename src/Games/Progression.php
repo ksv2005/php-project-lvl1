@@ -23,6 +23,7 @@ function run()
             $progression[$hidden] = '..';
             $question = implode(" ", $progression);
             return [$question, $answer];
-        }, RULE_PROGRESSION
+        },
+        RULE_PROGRESSION
     );
 }
