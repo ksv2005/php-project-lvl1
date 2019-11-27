@@ -11,16 +11,15 @@ function run()
 {
     play(
         function () {
-            $position = rand(1, 5);
+            $startElementPosition = rand(1, 5);
             $step = rand(1, PROGRESSION_LENGTH);
-            $hidden = rand(0, PROGRESSION_LENGTH - 1);
+            $hiddenElementPosition = rand(0, PROGRESSION_LENGTH - 1);
             $progression = [];
-            while (count($progression) < PROGRESSION_LENGTH) {
-                $progression[] = $position;
-                $position += $step;
+            for ($i = 0; $i < PROGRESSION_LENGTH; $i++) {
+                $progression[] = $startElementPosition + $step * $i;
             }
-            $answer = $progression[$hidden];
-            $progression[$hidden] = '..';
+            $answer = $progression[$hiddenElementPosition];
+            $progression[$hiddenElementPosition] = '..';
             $question = implode(" ", $progression);
             return [$question, $answer];
         },

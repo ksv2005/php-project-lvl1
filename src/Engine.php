@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-define('ROUND_COUNT', 3);
+define('ROUNDS_COUNT', 3);
 
 function play($solution, $rules)
 {
@@ -15,7 +15,7 @@ function play($solution, $rules)
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('');
-    for ($i = 0; $i < ROUND_COUNT; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         [$question, $answer] = call_user_func($solution);
         line("Question: %s", $question);
         $userMessage = prompt('Your answer');
