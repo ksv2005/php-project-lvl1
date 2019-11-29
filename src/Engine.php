@@ -7,16 +7,16 @@ use function cli\prompt;
 
 define('ROUNDS_COUNT', 3);
 
-function play($solution, $rules)
+function play($getQuestionAnswer, $rule)
 {
     line('Welcome to Brain Games!');
-    line($rules);
+    line($rule);
     line('');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('');
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        [$question, $answer] = call_user_func($solution);
+        [$question, $answer] = call_user_func($getQuestionAnswer);
         line("Question: %s", $question);
         $userMessage = prompt('Your answer');
         if ($userMessage == $answer) {
