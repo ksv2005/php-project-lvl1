@@ -3,12 +3,20 @@
     "description": "Project brain-games",
     "license": "proprietary",
     "autoload": {
+        "files": [
+            "src/Cli.php"
+        ],
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         }
     },
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.13"
+    },
     "bin": [
         "bin/brain-games"
-    ]
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6"
+    }
 }
