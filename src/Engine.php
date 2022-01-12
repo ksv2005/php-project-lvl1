@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 // phpcs:enable
 
-function main($game, $rule)
+function main(callable $game, string $rule)
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
