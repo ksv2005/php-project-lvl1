@@ -5,7 +5,19 @@ brain-games:
 	./bin/brain-games
 
 brain-even:
-	./bin/brain-even
+	./src/Games/brain-even
+
+brain-calc:
+	./src/Games/brain-calc
+
+brain-gcd:
+	./src/Games/brain-gcd
+
+brain-progression:
+	./src/Games/brain-progression
+
+brain-prime:
+	./src/Games/brain-prime
 
 validate:
 	composer validate

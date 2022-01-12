@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+function calculateGcd(int $firstNumber, int $secondNumber): int
+{
+    while ($secondNumber != 0){
+        $temp = $firstNumber % $secondNumber;
+        $firstNumber = $secondNumber;
+        $secondNumber = $temp;
+    }
+    return $firstNumber;
+}
+
+function gcdGame(): array
+{
+    $firstNumber = rand(0, 100);
+    $secondNumber = rand(0, 100);
+    $question = "{$firstNumber} {$secondNumber}";
+    $correctAnswer = (string)calculateGcd($firstNumber, $secondNumber);
+    return [$question, $correctAnswer];
+}
+
+main("gcd");
