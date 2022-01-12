@@ -13,7 +13,7 @@ function getProgression(int $startNumber, int $step, int $length, int $missingIn
         $startNumber += $step;
     }
     $correctAnswer = (string)$progression[$missingIndex];
-    $progression[$missingIndex] = "...";
+    $progression[$missingIndex] = "..";
     return [implode(" ", $progression), $correctAnswer];
 }
 
