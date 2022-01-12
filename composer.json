@@ -5,7 +5,12 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Engine.php"
+            "src/Engine.php",
+            "src/Games/Even.php",
+            "src/Games/Calc.php",
+            "src/Games/Gcd.php",
+            "src/Games/Progression.php",
+            "src/Games/Prime.php"
         ],
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -15,12 +20,12 @@
         "wp-cli/php-cli-tools": "^0.11.13"
     },
     "bin": [
-        "src/Games/brain-games",
-        "src/Games/brain-even",
-        "src/Games/brain-calc",
-        "src/Games/brain-gcd",
-        "src/Games/brain-progression",
-        "src/Games/brain-prime"
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.6"
