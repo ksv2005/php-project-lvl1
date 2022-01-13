@@ -3,6 +3,8 @@
 
 namespace BrainGames\Games\Gcd;
 
+use function BrainGames\Engine\main;
+
 const RULE_GCD = "Find the greatest common divisor of given numbers.";
 
 function calculateGcd(int $firstNumber, int $secondNumber): int

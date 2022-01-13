@@ -3,6 +3,9 @@
 
 namespace BrainGames\Games\Calc;
 
+use function BrainGames\Engine\main;
+
+const OPERATIONS = ['+', '-', '*'];
 const RULE_CALC = "What is the result of the expression?";
 
 function calculateExpression(string $expression): int
@@ -23,7 +26,7 @@ function run()
     main(
         function () {
             $firstNumber = rand(0, 100);
-            $operation = ["+", "-", "*"][rand(0, 2)];
+            $operation = OPERATIONS[rand(0, 2)];
             $secondNumber = rand(0, 100);
             $question = "{$firstNumber} {$operation} {$secondNumber}";
             $correctAnswer = (string)calculateExpression($question);

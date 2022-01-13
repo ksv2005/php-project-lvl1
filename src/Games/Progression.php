@@ -3,6 +3,8 @@
 
 namespace BrainGames\Games\Progression;
 
+use function BrainGames\Engine\main;
+
 const RULE_PROGRESSION = "What number is missing in the progression?";
 
 function getProgression(int $startNumber, int $step, int $length, int $missingIndex): array

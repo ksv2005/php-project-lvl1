@@ -1,7 +1,9 @@
 <?php
 
 // phpcs:disable
-require_once __DIR__ . '/../vendor/autoload.php';
+namespace BrainGames\Engine;
+
+const MAX_ROUND_COUNT = 3;
 use function cli\line;
 use function cli\prompt;
 // phpcs:enable
@@ -12,8 +14,8 @@ function main(callable $game, string $rule)
     $name = prompt('May I have your name?');
     line("Hello, {$name}!");
     line($rule);
-    $roundCount = 0;
-    while ($roundCount < 3) {
+    $currentRoundCount = 0;
+    while ($currentRoundCount < MAX_ROUND_COUNT) {
         [$question, $correctAnswer] = call_user_func($game);
         line("Question: {$question}");
         $userAnswer = prompt("Your answer");
@@ -23,7 +25,7 @@ function main(callable $game, string $rule)
             return;
         }
         line("Correct!");
-        $roundCount++;
+        $currentRoundCount++;
     }
     line("Congratulations, {$name}!");
 }

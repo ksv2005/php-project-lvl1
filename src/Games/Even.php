@@ -3,6 +3,8 @@
 
 namespace BrainGames\Games\Even;
 
+use function BrainGames\Engine\main;
+
 const RULE_EVEN = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
 function isEven(int $number): string

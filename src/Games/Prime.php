@@ -3,6 +3,8 @@
 
 namespace BrainGames\Games\Prime;
 
+use function BrainGames\Engine\main;
+
 const RULE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $number): string
